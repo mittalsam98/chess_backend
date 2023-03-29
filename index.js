@@ -6,7 +6,7 @@ app.use(cors());
 
 const http = require('http').Server(app);
 var io = require('socket.io')( http, { cors:{
-    origin:"*",
+    origin:['https://chess-web-online.netlify.app'],
     methods: ["GET", "POST"],
 }});
 
@@ -16,7 +16,6 @@ app.get('/',(req,res)=>{
 
 io.on('connection',function(socket){
     let i=0;
-    console.log('User fdas ',i++  );
     gameLogic.initializeGame(io, socket)
 })
 
