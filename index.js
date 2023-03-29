@@ -8,7 +8,7 @@ const http = require('http').Server(app);
 var io = require('socket.io')( http, {cors: {
     origin: "https://chess-web-online.netlify.app",
     methods: ["GET", "POST",'PATCH', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ["my-custom-header"],
+    allowedHeaders: ["Access-Control-Allow-Headers"],
     credentials: true
   }});
 
