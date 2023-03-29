@@ -5,7 +5,10 @@ const app = express();
 app.use(cors());
 
 const http = require('http').Server(app);
-var io = require('socket.io')( http, { cors:{origin:"*"} });
+var io = require('socket.io')( http, { cors:{
+    origin:"*",
+    methods: ["GET", "POST"],
+}});
 
 app.get('/',(req,res)=>{
     res.send('Hello server is running fine')
