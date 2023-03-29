@@ -5,10 +5,12 @@ const app = express();
 app.use(cors());
 
 const http = require('http').Server(app);
-var io = require('socket.io')( http, { cors:{
-    origin:"*",
-    methods: ["GET", "POST"],
-}});
+var io = require('socket.io')( http, {cors: {
+    origin: "https://chess-web-online.netlify.app",
+    methods: ["GET", "POST",'PATCH', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ["my-custom-header"],
+    credentials: true
+  }});
 
 app.get('/',(req,res)=>{
     res.send('Hello server is running fine')
