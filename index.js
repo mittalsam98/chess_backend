@@ -6,7 +6,7 @@ app.use(cors());
 
 const http = require('http').Server(app);
 var io = require('socket.io')( http, { cors:{
-    origin:['https://chess-web-online.netlify.app'],
+    origin:"*",
     methods: ["GET", "POST"],
 }});
 
