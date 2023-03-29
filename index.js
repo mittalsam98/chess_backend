@@ -2,7 +2,7 @@ const express = require('express');
 var cors = require('cors')
 var gameLogic = require('./socketCalls');
 const app = express();
-app.use(cors());
+app.use(cors({ origin: "https://chess-web-online.netlify.app"}));
 
 const http = require('http').Server(app);
 var io = require('socket.io')( http, {cors: {
